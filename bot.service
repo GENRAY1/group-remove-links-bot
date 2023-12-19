@@ -1,0 +1,14 @@
+[Unit]
+Description=Telegram Bot
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/bot/
+ExecStart=/usr/bin/python3 /home/bot/main.py
+RestartSec=60
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
